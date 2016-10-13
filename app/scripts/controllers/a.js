@@ -1,0 +1,25 @@
+angular.module("yoLessApp").controller("a",function ($scope,$http) {
+	$scope.add=function(){
+		$http({
+			url:server+"/test1510",
+			method:"POST",
+			data:$scope.updata
+		}).success(function(e){
+			$scope.data.push($scope.updata)
+		})
+	}
+	$scope.del=function(e){
+		$http({
+			url:server+"/test1510/"+e.id,
+			method:"delete"
+		}).success(function(){
+			$scope.data.splice($scope.data.indexOf(e),1)
+		})
+	}
+	$http({
+		url:server+"/test1510",
+		method:"get"
+	}).success(function(e){
+		$scope.data=e
+	})
+})
