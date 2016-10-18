@@ -22,9 +22,9 @@ angular
   }).directive("datatable",function(){
   	return {
   		restrict:"ECMA",
-  		scope:{datajgr:"=abc"},
+  		scope:{datajgr:"@abc"},
   		replace:true,
-  		template:"<input type='text' ng-model='datajgr[0].jgr'>",
+  		template:"<input type='text' ng-model='datajgr'>",
   		link:function(scope,el,attr){
   			scope.jgr=attr["abc"]
   		}
