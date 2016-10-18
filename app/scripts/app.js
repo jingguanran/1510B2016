@@ -9,7 +9,7 @@ var server="http://123.56.227.177:2504"
  * Main module of the application.
  */
 angular
-  .module('yoLessApp', ["ui.router"]).controller("app",function ($scope,$http) {
+  .module('yoLessApp', ["ui.router","jgr"]).controller("app",function ($scope,$http) {
   	
   	$scope.data2=[{jgr:1}]
   	// body...
@@ -19,14 +19,4 @@ angular
   		templateUrl:"views/a.html",
   		controller:"a"
   	})
-  }).directive("datatable",function(){
-  	return {
-  		restrict:"ECMA",
-  		scope:{datajgr:"@abc"},
-  		replace:true,
-  		template:"<input type='text' ng-model='datajgr'>",
-  		link:function(scope,el,attr){
-  			scope.jgr=attr["abc"]
-  		}
-  	}
   })
