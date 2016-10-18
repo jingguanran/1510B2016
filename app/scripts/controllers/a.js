@@ -1,4 +1,16 @@
 angular.module("yoLessApp").controller("a",function ($scope,$http) {
+	$scope.editSave=function(){
+		$http({
+			url:server+"/test1510/"+$scope.editData.id,
+			method:"PUT",
+			data:$scope.editData
+		}).success(function(){
+			
+		})
+	}
+	$scope.edit=function(e){
+		$scope.editData=e
+	}
 	$scope.add=function(){
 		$http({
 			url:server+"/test1510",
