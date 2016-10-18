@@ -10,7 +10,8 @@ var server="http://123.56.227.177:2504"
  */
 angular
   .module('yoLessApp', ["ui.router"]).controller("app",function ($scope,$http) {
-
+  	
+  	$scope.data2=[{jgr:1}]
   	// body...
   }).config(function ($stateProvider){
   	$stateProvider.state("a",{
@@ -18,4 +19,14 @@ angular
   		templateUrl:"views/a.html",
   		controller:"a"
   	})
+  }).directive("datatable",function(){
+  	return {
+  		restrict:"ECMA",
+  		scope:{datajgr:"=abc"},
+  		replace:true,
+  		template:"<input type='text' ng-model='datajgr[0].jgr'>",
+  		link:function(scope,el,attr){
+  			scope.jgr=attr["abc"]
+  		}
+  	}
   })
