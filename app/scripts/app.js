@@ -9,14 +9,14 @@ var server="http://123.56.227.177:2504"
  * Main module of the application.
  */
 angular
-  .module('yoLessApp', ["ui.router","jgr"]).controller("app",function ($scope,$http) {
-  	
-  	$scope.data2=[{jgr:1}]
-  	// body...
-  }).config(function ($stateProvider){
+  .module('yoLessApp', ["ui.router","jgr"]).controller("app",["$scope",function ($scope,$http) {
+    
+    $scope.data2=[{jgr:1}]
+    // body...
+  }]).config(["$stateProvider",function ($stateProvider){
   	$stateProvider.state("a",{
   		url:"/a",
   		templateUrl:"views/a.html",
   		controller:"a"
   	})
-  })
+  }])
