@@ -18,5 +18,8 @@ angular
   		url:"/a",
   		templateUrl:"views/a.html",
   		controller:"a"
-  	})
+  	}).state("b",{
+      url:"/b",
+      templateUrl:"views/b.html"
+    })
   }])

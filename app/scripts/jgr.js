@@ -31,4 +31,15 @@ angular.module("jgr",[]).directive("datatable",["$http",function($http){
         })
       }
     }
+  }]).directive("mbutton",["$http",function($http){
+    return {
+      restrict:"ECMA",
+      scope:{text:"=mtext"},
+      template:'<ul class="nav nav-tabs" role="tablist" ng-transclude></ul>',
+      link:function(s,e,a){
+
+      },
+      replace:true,
+      transclude:true
+    }
   }])
